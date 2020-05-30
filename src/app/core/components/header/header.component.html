@@ -1,0 +1,12 @@
+<div class="nav-content">
+  <a [routerLink]="['/']" class="nav-logo"><span>&#9947;</span></a>
+  <button class="menu-btn btn-open" (click)="toggleMenu()">&#9776;</button>
+  <nav class="nav" [ngClass]="{'nav-open': showMenu}">
+    <button class="menu-btn btn-close" (click)="toggleMenu()">&times;</button>
+    <ul class="nav-list">
+      <li class="nav-item"><a [routerLink]="['/']" class="nav-link">home</a></li>
+      <li class="nav-item"><a [routerLink]="['/']" class="nav-link">anime</a></li>
+      <li class="nav-item"><a [routerLink]="['/']" class="nav-link">about me</a></li>
+    </ul>
+  </nav>
+</div>

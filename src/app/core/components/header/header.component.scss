@@ -1,0 +1,82 @@
+@import '../../../../assets/scss/variables';
+
+/** GENERAL **/
+.menu-btn {
+    border: 0;
+    background: 0;
+    cursor: pointer;
+    font-size: 2em;
+    font-weight: 700;
+    padding: .5em;
+}
+
+/** COMPONENT **/
+.nav-content {
+    width: 100%;
+    background-color: $primary-color;
+    display: flex;
+
+    .nav-logo {
+        width: 5rem;
+        background-color: $secondary-color;
+        text-decoration: none;
+        font-size: 2rem;
+        color: $primary-color;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .btn-open {
+        color: $secondary-color;
+        margin-left: auto;
+    }
+
+    .nav {
+        top: 0;
+        bottom: 0;
+        left: 100%;
+        right: 0;
+        width: 100%;
+        background: $secondary-color;
+        position: fixed;
+
+        display: flex;
+        flex-direction: column;
+
+        transform: translateX(0);
+        transition: transform 250ms;
+
+        .btn-close {
+            color: $primary-color;
+            align-self: flex-start;
+        }
+
+        .nav-list {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+
+            display: flex;
+            flex-direction: column;
+            justify-content: space-around;
+            align-items: center;
+
+            .nav-item {
+                list-style: none;
+
+                .nav-link {
+                    text-decoration: none;
+                    color: $primary-color;
+                    font-size: 2.5rem;
+                    font-weight: 700;
+                    text-transform: uppercase;
+                }
+            }
+        }
+    }
+
+    .nav-open {
+        transform: translateX(-100%);
+    }
+}
