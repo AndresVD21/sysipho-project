@@ -1,0 +1,65 @@
+@import '../../../../assets/scss/variables';
+
+@media (min-width: 500px) {
+    .landing-page-item {
+        text-align: center;
+        padding: 1.5em;
+        position: relative;
+        perspective: 160rem;
+        transition: all .8s ease;
+        height: 100%;
+    
+        .item__side {
+            transition: all .8s ease;
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            backface-visibility: hidden;
+            color: $primary-color;
+            padding: 1em;
+        }
+    
+        .item__side--back {
+            background-image: linear-gradient(#40fdec, $secondary-color);
+            transform: rotateY(180deg);
+            overflow-y: auto;
+        }
+    
+        .item__side--front {
+            background-color: #ebebeb;
+            background-size: cover;
+        }
+    
+        &:hover {
+            .item__side--front {
+                transform: rotateY(-180deg);
+            }
+    
+            .item__side--back {
+                transform: rotateY(0);
+            }
+        }
+    
+        // &:hover {
+        //     transform: translateY(-3px);
+        //     box-shadow: 0 1rem 2rem rgba(#000,.2);
+        // }
+    
+        .landing-page-item-icon {
+            font-size: 2rem;
+        }
+    
+        .landing-page-item-title {
+            font-size: 2rem;
+            margin: .5em 0;
+        }
+    
+        .landing-page-item-description {
+            line-height: 1.6;
+            letter-spacing: 1px;
+            margin: 0;
+        }
+    }
+}

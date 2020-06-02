@@ -1,0 +1,16 @@
+<div class="landing-page-item">
+    <div class="item__side item__side--front" [ngStyle]="{'background-image': getUrl()}">
+        <fa-icon class="landing-page-item-icon" [icon]="faBookmark"></fa-icon>
+        <h2 class="landing-page-item-title">{{item.title}}</h2>
+        <!-- <p class="landing-page-item-description">
+            {{it}}
+        </p> -->
+    </div>
+    <div class="item__side item__side--back">
+        <fa-icon class="landing-page-item-icon" [icon]="item.icon"></fa-icon>
+        <h2 class="landing-page-item-title">{{item.title}}</h2>
+        <p class="landing-page-item-description">
+            {{item.text}}
+        </p>
+    </div>
+</div>

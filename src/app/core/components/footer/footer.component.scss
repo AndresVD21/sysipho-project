@@ -1,3 +1,27 @@
+.social-link,
+.footer-footprint {
+    opacity: .3;
+}
+
 .footer-content {
-    
+    text-align: center;
+    background-color: #ebebeb;
+    padding: 4em;
+
+    .social-list {
+        margin: 0;
+        padding: 0;
+
+        .social-item {
+            list-style: none;
+
+            .social-link {
+                font-size: 2rem;
+            }
+        }
+    }
+
+    .footer-footprint {
+        font-size: .6rem;
+    }
 }

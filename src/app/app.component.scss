@@ -1,5 +1,5 @@
 .app-wrapper {
     display: grid;
-    grid-template-rows: minmax(1em, 1fr) 1fr minmax(1em, 1fr);
+    grid-template-rows: auto 1fr auto;
 
 }

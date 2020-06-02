@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { faUserCircle } from '@fortawesome/free-solid-svg-icons';
 
 @Component({
   selector: 'app-header',
@@ -6,6 +7,10 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./header.component.scss']
 })
 export class HeaderComponent implements OnInit {
+
+  faUserCircle = faUserCircle;
+
+  showUserList: boolean = false;
 
   // FOR SMALL SCREEN
   showMenu: boolean = false;
@@ -17,6 +22,10 @@ export class HeaderComponent implements OnInit {
 
   toggleMenu() {
     this.showMenu = !this.showMenu;
+  }
+
+  toggleUserList() {
+    this.showUserList = !this.showUserList;
   }
 
 

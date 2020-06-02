@@ -40,22 +40,29 @@
         width: 100%;
         background: $secondary-color;
         position: fixed;
+        z-index: 100;
+        color: $primary-color;
 
         display: flex;
         flex-direction: column;
+        justify-content: center;
+        align-items: center;
 
         transform: translateX(0);
         transition: transform 250ms;
 
         .btn-close {
-            color: $primary-color;
+            
             align-self: flex-start;
+            top: 0;
+            left: 0;
+            position: absolute;
         }
 
         .nav-list {
             margin: 0;
             padding: 0;
-            height: 100%;
+            // height: 100%;
 
             display: flex;
             flex-direction: column;
@@ -64,6 +71,10 @@
 
             .nav-item {
                 list-style: none;
+
+                &:not(:first-child) {
+                    margin-top: 1em;
+                }
 
                 .nav-link {
                     text-decoration: none;
@@ -74,9 +85,153 @@
                 }
             }
         }
+
+        .nav-separator {
+            width: 50%;
+            background: $primary-color;
+            border: 0;
+            height: .5em;
+        }
+
+        .user-profile {
+            .user-profile-img {
+                display: none;
+            }
+
+            .user-profile-dropdown {
+                .user-profile-list {
+                    margin: 0;
+                    padding: 0;
+                    display: flex;
+                    align-items: center;
+                    flex-direction: column;
+                    justify-content: space-around;
+                    text-align: center;
+
+                    .user-profile-item {
+                        list-style: none;
+                        text-transform: uppercase;
+                        // margin-top: 1em;
+                        font-weight: 700;
+                        width: 100%;
+                    }
+
+                    .user-profile-item+.user-profile-item{
+                        margin-top: 1em;
+                    }
+
+
+                }
+            }
+        }
     }
 
     .nav-open {
         transform: translateX(-100%);
     }
+}
+
+@media (min-width: 500px) {
+
+    .menu-btn,
+    .btn-close {
+        display: none;
+    }
+
+    .nav-content {
+        .nav {
+            position: initial;
+            background-color: $primary-color;
+            flex-direction: row;
+            justify-content: space-between;
+
+            .nav-list {
+                flex-direction: row;
+                justify-content: flex-start;
+
+                .nav-item {
+                    margin-left: 1em;
+
+                    &:not(:first-child) {
+                        margin-top: 0;
+                    }
+
+                    .nav-link {
+                        font-size: 1rem;
+                        // font-weight: 400;
+                        color: $secondary-color;
+                        letter-spacing: 5px;
+
+                        &:hover,
+                        &:focus {
+                            color: $accent-color;
+                        }
+                    }
+                }
+
+            }
+
+            .nav-separator {
+                display: none;
+            }
+
+            .user-profile {
+                font-size: 2rem;
+                color: $secondary-color;
+                padding: 1rem;
+                cursor: pointer;
+                position: relative;
+
+                .user-profile-img {
+                    display: initial;
+                }
+
+                .user-profile-dropdown {
+                    position: absolute;
+                    right: 1rem;
+                    width: 200px;
+                    background: $secondary-color;
+                    padding: .5em;
+                    border-radius: 5px;
+
+                    //TO SCALE RIGHT TO LEFT
+                    // transform: scale(0, 1);
+                    // transform-origin: right;
+
+                    //TO SCALE TOP TO BOT
+                    transform: scale(1, 0);
+                    transform-origin: top;
+
+                    transition: transform 200ms ease-in-out;
+
+                    .user-profile-list {
+
+                        align-items: flex-end;
+
+                        .user-profile-item+.user-profile-item {
+                            margin-top: .5em;
+                        }
+
+                        .user-profile-item {
+                            list-style: none;
+                            font-size: 1rem;
+                            text-align: right;
+                            font-weight: 700;
+                            color: $primary-color;
+                            padding: .5em 1.5em;
+
+                            &:hover {
+                                background-color: $accent-color;
+                            }
+                        }
+                    }
+                }
+
+                .dropdown-open {
+                    transform: scale(1, 1);
+                }
+            }
+        }
+    }
+
 }

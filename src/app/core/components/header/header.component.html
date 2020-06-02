@@ -8,5 +8,15 @@
       <li class="nav-item"><a [routerLink]="['/']" class="nav-link">anime</a></li>
       <li class="nav-item"><a [routerLink]="['/']" class="nav-link">about me</a></li>
     </ul>
+    <hr class="nav-separator">
+    <nav class="user-profile" (click)="toggleUserList()">
+      <fa-icon class="user-profile-img" [icon]="faUserCircle"></fa-icon>
+      <div class="user-profile-dropdown" [ngClass]="{'dropdown-open': showUserList}">
+        <ul class="user-profile-list">
+          <li class="user-profile-item">user profile</li>
+          <li class="user-profile-item">settings</li>
+        </ul>
+      </div>
+    </nav>
   </nav>
 </div>
